@@ -43,7 +43,6 @@ const PageHotelList = () => {
 			style={{
 				display: "flex",
 				alignItems: "flex-end",
-				justifyContent: "flex-start",
 				width: "100%",
 				position: "relative",
 				justifyContent: "center",
