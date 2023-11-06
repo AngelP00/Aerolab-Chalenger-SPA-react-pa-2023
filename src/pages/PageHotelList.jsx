@@ -39,11 +39,32 @@ const PageHotelList = () => {
 	console.log('Final HotelList');
 	return (
 		<>
-			<img src="/header-x1.png" alt="" style={{ width: "1440px", height: "412px"}} />
-			<Typography variant="h4" component="h2">
-				Booking App
+			<div
+			style={{
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				width: "100%",
+				//height: "100vh", // Ajusta la altura como desees
+				position: "relative",
+			}}
+			>
+			<img src="/header-x1.png" alt="" style={{ maxWidth: "100%", height: "auto", marginBottom: "20px" }} />
+			<Typography
+				variant="h4"
+				component="h2"
+				style={{
+				position: "absolute",
+				top: "60%",
+				left: "5%",
+				//transform: "translate(-50%, -50%)",
+				}}
+			>
+				Electronics
 			</Typography>
-			;
+			</div>
+
+
 			<Grid container spacing={2} textAlign="-webkit-center">
 				{hotels.map((hotel) => (
 					<Grid item key={hotel.id} xs={12} sm={6} md={4} lg={3}>

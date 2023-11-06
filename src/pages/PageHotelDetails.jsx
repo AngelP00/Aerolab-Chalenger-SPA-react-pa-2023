@@ -45,7 +45,7 @@ const PageHotelDetails = () => {
 	console.log('details');
 	return (
 		<div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", height: "100vh", margin: "20px" }}>
-			<Card sx={{ width: "40%", backgroundColor: "#e8e8e8" }}>
+			<Card sx={{ backgroundColor: "#e8e8e8" }}>
 				<CardMedia sx={{ height: 200 }} image={hotel.image} title={hotel.name} />
 				<CardContent>
 				<Typography gutterBottom variant="h5" component="div">
