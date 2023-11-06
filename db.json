@@ -1,0 +1,52 @@
+{
+	"hotels": [
+		{
+			"name": "Hotel Ritz",
+			"description": "Un hotel de lujo ubicado en el corazón de la ciudad",
+			"id": 1,
+			"image": "/img/hotel1.jpeg"
+		},
+		{
+			"name": "Hotel Plaza",
+			"description": "Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan.",
+			"id": 2,
+			"image": "/img/hotel2.jpeg"
+		},
+		{
+			"name": "Hotel Waldorf Astoria",
+			"description": "Un hotel de cinco estrellas ubicado en Midtown Manhattan",
+			"id": 3,
+			"image": "/img/hotel3.jpeg"
+		},
+		{
+			"name": "Hotel St. Regis",
+			"description": "Un hotel de lujo ubicado en Central Park",
+			"id": 4,
+			"image": "/img/hotel4.jpeg"
+		},
+		{
+			"name": "Hotel St. Regis",
+			"description": "Un hote",
+			"id": 4,
+			"image": "/img/hotel4.jpeg"
+		},
+		{
+			"name": "Hotel Peninsula",
+			"description": "Un hotel de cinco estrellas ubicado en Midtown Manhattan",
+			"id": 5,
+			"image": "/img/hotel5.jpeg"
+		},
+		{
+			"name": "Hotel Peninsula 2",
+			"description": "Un hotel de cinco estrellas ubicado en Midtown Manhattan",
+			"id": 6,
+			"image": "/img/hotel5.jpeg"
+		},
+		{
+			"name": "Hotel Peninsula 3",
+			"description": "Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan. Un hotel de cinco estrellas ubicado en Midtown Manhattan.",
+			"id": 7,
+			"image": "/img/hotel5.jpeg"
+		}
+	]
+}
