@@ -12,6 +12,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
+//start aerolab
+import { useEffect, useState } from "react";
+import getData from "../utils/getData";
+//end aerolab
+
 const fetchHotels = async () => {
 	const response = await fetch("http://localhost:3001/hotels");
 	if (!response.ok) {
@@ -21,6 +26,16 @@ const fetchHotels = async () => {
 };
 
 const PageHotelList = () => {
+	//start aerolab
+	const [data, setData] = useState([]);
+	useEffect(() => {
+		getData().then((data) => {
+		  setData(data);
+		});
+	}, []);
+	console.log('data: ', data);
+	//end aerolab
+
 	console.log('Inicio HotelList a');
 	const {
 		data: hotels,
@@ -70,6 +85,44 @@ const PageHotelList = () => {
 				Electronics
 			</Typography>
 			</div>
+			
+			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "20px" }}>
+				{data.map((hotel) => (
+					<Grid item key={hotel._id} xs={12} sm={6} md={4} lg={3}>
+					<Link to={`/hotel/${hotel.id}`} style={{ textDecoration: "none" }}>
+						<Card sx={{
+							maxWidth: 345, // Ancho máximo fijo para todas las tarjetas
+							//backgroundColor: "#e8e8e8",
+							//display: "flex",
+							
+							height: "100%", // Altura fija para el contenedor de la tarjeta
+							//width: "100%", // Ancho fijo del 100%
+							//justifyContent: "space-between", // Alinea los elementos en el eje principal
+							//flexDirection: "column",
+							
+							}}>
+						
+						<Box sx={{ height: 285, display: "flex", flexDirection: "column" }}>
+						<Box sx={{ position: "relative" }}>
+							<Link to="/" style={{ textDecoration: "none", color: "616161", position: "absolute", top: 0, right: 0 }}>
+								<img src="/buy-blue.svg" alt="" />
+							</Link>
+							<CardMedia sx={{ height: 200, backgroundSize: "auto" }} image={hotel.img.url} title={hotel.name} />
+						</Box>
+						<CardContent>
+							<Typography gutterBottom variant="h5" component="div">
+								{hotel.name}
+							</Typography>
+							<Typography variant="body2" color="text.secondary">
+								description
+							</Typography>
+						</CardContent>
+						</Box>
+						</Card>
+					</Link>
+					</Grid>
+				))}
+			</Grid>
 
 			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "20px" }}>
 				{hotels.map((hotel) => (
