@@ -25,12 +25,6 @@
 			"image": "/img/hotel4.jpeg"
 		},
 		{
-			"name": "Hotel St. Regis",
-			"description": "Un hote",
-			"id": 4,
-			"image": "/img/hotel4.jpeg"
-		},
-		{
 			"name": "Hotel Peninsula",
 			"description": "Un hotel de cinco estrellas ubicado en Midtown Manhattan",
 			"id": 5,
