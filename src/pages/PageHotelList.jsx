@@ -46,20 +46,22 @@ const PageHotelList = () => {
 				justifyContent: "flex-start",
 				width: "100%",
 				position: "relative",
+				justifyContent: "center",
+				backgroundColor: "#15dbff",
 			}}
 			>
 			<img
 				src="/header-x1.png"
 				alt=""
-				style={{ maxWidth: "100%", height: "auto", marginBottom: "20px" }}
+				style={{ maxWidth: "100%", height: "auto" }}
 			/>
 			<Typography
 				variant="h4"
 				component="h2"
 				style={{
 				position: "absolute",
-				bottom: "10%",
-				left: "5%",
+				bottom: "5%",
+				left: "10%",
 				fontFamily: "SourceSansPro-Bold",
 				fontSize: "64px",
 				color: "#ffffff",
@@ -70,7 +72,7 @@ const PageHotelList = () => {
 			</Typography>
 			</div>
 
-			<Grid container spacing={2} textAlign="-webkit-center">
+			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "20px" }}>
 				{hotels.map((hotel) => (
 					<Grid item key={hotel.id} xs={12} sm={6} md={4} lg={3}>
 					<Link to={`/hotel/${hotel.id}`} style={{ textDecoration: "none" }}>
