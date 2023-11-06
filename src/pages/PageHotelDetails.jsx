@@ -60,9 +60,10 @@ const PageHotelDetails = () => {
 							<Typography gutterBottom variant="h5" component="div">
 								{hotel.name}
 							</Typography>
-							<Typography variant="body2" color="text.secondary">
+							<Typography variant="body2" color="text.secondary" sx={{ maxWidth: "400px" }}>
 								{hotel.description}
 							</Typography>
+
 						</CardContent>
 				</Box>
 
