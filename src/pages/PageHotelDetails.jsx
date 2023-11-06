@@ -9,6 +9,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 const fetchHotel = async (id) => {
 		console.log('obteniendo data del hotel ',id)
@@ -46,15 +47,27 @@ const PageHotelDetails = () => {
 	return (
 		<div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", height: "100vh", margin: "20px" }}>
 			<Card sx={{ backgroundColor: "#e8e8e8" }}>
-				<CardMedia sx={{ height: 200 }} image={hotel.image} title={hotel.name} />
-				<CardContent>
-				<Typography gutterBottom variant="h5" component="div">
-					{hotel.name}
-				</Typography>
-				<Typography variant="body2" color="text.secondary">
-					{hotel.description}
-				</Typography>
-				</CardContent>
+
+
+				<Box sx={{display: "flex", flexDirection: "column" }}>
+						<CardMedia
+							sx={{ height: "auto" }}
+							component="img"
+							image={hotel.image}
+							title={hotel.name}
+						/>
+						<CardContent>
+							<Typography gutterBottom variant="h5" component="div">
+								{hotel.name}
+							</Typography>
+							<Typography variant="body2" color="text.secondary">
+								{hotel.description}
+							</Typography>
+						</CardContent>
+				</Box>
+
+
+				
 				<CardActions>
 				<BookingForm />
 				</CardActions>

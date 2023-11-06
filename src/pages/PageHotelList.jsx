@@ -42,28 +42,33 @@ const PageHotelList = () => {
 			<div
 			style={{
 				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
+				alignItems: "flex-end",
+				justifyContent: "flex-start",
 				width: "100%",
-				//height: "100vh", // Ajusta la altura como desees
 				position: "relative",
 			}}
 			>
-			<img src="/header-x1.png" alt="" style={{ maxWidth: "100%", height: "auto", marginBottom: "20px" }} />
+			<img
+				src="/header-x1.png"
+				alt=""
+				style={{ maxWidth: "100%", height: "auto", marginBottom: "20px" }}
+			/>
 			<Typography
 				variant="h4"
 				component="h2"
 				style={{
 				position: "absolute",
-				top: "60%",
+				bottom: "10%",
 				left: "5%",
-				//transform: "translate(-50%, -50%)",
+				fontFamily: "SourceSansPro-Bold",
+				fontSize: "64px",
+				color: "#ffffff",
+				textAlign: "left",
 				}}
 			>
 				Electronics
 			</Typography>
 			</div>
-
 
 			<Grid container spacing={2} textAlign="-webkit-center">
 				{hotels.map((hotel) => (
