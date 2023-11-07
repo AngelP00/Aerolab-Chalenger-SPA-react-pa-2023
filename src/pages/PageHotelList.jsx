@@ -55,7 +55,10 @@ const PageHotelList = () => {
 	console.log('Inicio HotelList c');
 
 	if (error) {
-		return <div>Error fetching Hotels! {error.message}</div>;
+		//return <div>Error fetching Hotels! {error.message}</div>;
+		return <Typography variant="body2" color="text.secondary">
+				Error fetching Hotels! {error.message}
+			</Typography>;
 	}
 	console.log('Final HotelList');
 	return (
@@ -92,13 +95,13 @@ const PageHotelList = () => {
 			</Typography>
 			</div>
 			
-			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "0px", backgroundColor: "blue" }}>{/* backgroundColor: "blue"*/}
+			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "0px", backgroundColor: "#f9f9f9" }}>{/* backgroundColor: "#f9f9f9"*/}
 				{products.map((hotel) => (
 					<Grid item key={hotel._id} xs={12} sm={6} md={4} lg={3}>
 					<Link to={`/product/${hotel._id}`} style={{ textDecoration: "none" }}>
 						<Card sx={{
 							//maxWidth: 345, // Ancho máximo fijo para todas las tarjetas
-							backgroundColor: "red",//backgroundColor: "#ffffff",
+							backgroundColor: "#ffffff",//backgroundColor: "#ffffff",
 							//display: "flex",
 							
 							height: "276px", // Altura fija para el contenedor de la tarjeta

@@ -87,11 +87,17 @@ const PageHotelDetails = () => {
 	});
 
 	if (isLoading) {
-		return <div>Loading...</div>;
+		//return <div>Loading...</div>;
+		return <Typography variant="body2" color="text.secondary">
+				Loading...
+			</Typography>;
 	}
 
 	if (error) {
-		return <div>Error fetching Hotel! {error.message}</div>;
+		//return <div>Error fetching Hotel! {error.message}</div>;
+		return <Typography variant="body2" color="text.secondary">
+				Error fetching Hotel! {error.message}
+			</Typography>;
 	}
 	
 	console.log('details');
