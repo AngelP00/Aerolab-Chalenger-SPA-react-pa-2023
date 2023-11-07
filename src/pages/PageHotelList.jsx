@@ -27,6 +27,7 @@ const fetchHotels = async () => {
 
 const PageHotelList = () => {
 	//start aerolab
+	/*
 	const [data, setData] = useState([]);
 	useEffect(() => {
 		getData().then((data) => {
@@ -34,17 +35,22 @@ const PageHotelList = () => {
 		});
 	}, []);
 	console.log('data: ', data);
+	*/
 	//end aerolab
 
 	console.log('Inicio HotelList a');
 	const {
-		data: hotels,
+		data: products,
 		isLoading,
 		error,
-	} = useQuery({ queryKey: ["hotels"], queryFn: fetchHotels });
+	//} = useQuery({ queryKey: ["allProducts"], queryFn: fetchHotels });
+	} = useQuery({ queryKey: ["allProducts"], queryFn: getData });
 	console.log('Inicio HotelList b');
 	if (isLoading) {
-		return <div>Loading...</div>;
+		//return <div>Loading...</div>;
+		return <Typography variant="body2" color="text.secondary">
+				Loading...
+			</Typography>;
 	}
 	console.log('Inicio HotelList c');
 
@@ -86,44 +92,44 @@ const PageHotelList = () => {
 			</Typography>
 			</div>
 			
-			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "20px" }}>
-				{data.map((hotel) => (
+			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "0px", backgroundColor: "blue" }}>{/* backgroundColor: "blue"*/}
+				{products.map((hotel) => (
 					<Grid item key={hotel._id} xs={12} sm={6} md={4} lg={3}>
-					<Link to={`/hotel/${hotel.id}`} style={{ textDecoration: "none" }}>
+					<Link to={`/product/${hotel._id}`} style={{ textDecoration: "none" }}>
 						<Card sx={{
-							maxWidth: 345, // Ancho máximo fijo para todas las tarjetas
-							//backgroundColor: "#e8e8e8",
+							//maxWidth: 345, // Ancho máximo fijo para todas las tarjetas
+							backgroundColor: "red",//backgroundColor: "#ffffff",
 							//display: "flex",
 							
-							height: "100%", // Altura fija para el contenedor de la tarjeta
-							//width: "100%", // Ancho fijo del 100%
+							height: "276px", // Altura fija para el contenedor de la tarjeta
+							width: "276px", // Ancho fijo del 100%
 							//justifyContent: "space-between", // Alinea los elementos en el eje principal
 							//flexDirection: "column",
 							
 							}}>
 						
-						<Box sx={{ height: 285, display: "flex", flexDirection: "column" }}>
-						<Box sx={{ position: "relative" }}>
-							<Link to="/" style={{ textDecoration: "none", color: "616161", position: "absolute", top: 0, right: 0 }}>
-								<img src="/buy-blue.svg" alt="" />
-							</Link>
-							<CardMedia sx={{ height: 200, backgroundSize: "auto" }} image={hotel.img.url} title={hotel.name} />
-						</Box>
-						<CardContent>
-							<Typography gutterBottom variant="h5" component="div">
-								{hotel.name}
-							</Typography>
-							<Typography variant="body2" color="text.secondary">
-								description
-							</Typography>
-						</CardContent>
+						<Box sx={{ display: "flex", flexDirection: "column" }}>
+							<Box sx={{ position: "relative" }}>
+								<Link to="/" style={{ textDecoration: "none", color: "616161", position: "absolute", top: 10, right: 10 }}>
+									<img src="/buy-blue.svg" alt="" />
+								</Link>
+								<CardMedia sx={{ height: 200, backgroundSize: "auto" }} image={hotel.img.url} title={hotel.name} />
+							</Box>
+							<CardContent>
+								<Typography gutterBottom variant="h5" component="div">
+									{hotel.name} {/*key {hotel._id}*/}
+								</Typography>
+								<Typography variant="body2" color="text.secondary">
+									{hotel.category}
+								</Typography>
+							</CardContent>
 						</Box>
 						</Card>
 					</Link>
 					</Grid>
 				))}
 			</Grid>
-
+			{/*
 			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "20px" }}>
 				{hotels.map((hotel) => (
 					<Grid item key={hotel.id} xs={12} sm={6} md={4} lg={3}>
@@ -159,6 +165,7 @@ const PageHotelList = () => {
 					</Grid>
 				))}
 			</Grid>
+			*/}
 		</>
 		
 	  );

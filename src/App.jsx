@@ -49,7 +49,7 @@ function App() {
 					<Header />
 					<Routes>
 						<Route path="/" element={<PageHotelList />} />
-						<Route path="/hotel/:id" element={<PageHotelDetails />} />
+						<Route path="/product/:id" element={<PageHotelDetails />} />
 						<Route path="/user" element={<PageUser />} />
 						<Route path="/contact" element={<PageContact />} />
 						
