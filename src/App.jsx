@@ -7,8 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //react-router-dom
 
 import { Toaster } from "react-hot-toast";
-import PageHotelList from "./pages/PageHotelList";
-import PageHotelDetails from "./pages/PageHotelDetails";
+import PageHotelList from "./pages/PageProductList";
+import PageHotelDetails from "./pages/PageProductDetails";
 import PageUser from "./pages/PageUser";
 import PageContact from "./pages/PageContact";
 
@@ -28,7 +28,7 @@ function App() {
 				<Header />
 				<Switch>
 					<Route path="/" component={PageHotelList} />
-					<Route path="/hotel/:id" component={HotelDetails} />
+					<Route path="/product/:id" component={HotelDetails} />
 					<Route path="/about" component={PageAbout} />
 					<Route path="/contact" component={PageContact} />
 					<Route>

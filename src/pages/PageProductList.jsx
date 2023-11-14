@@ -52,7 +52,7 @@ const PageHotelList = () => {
   	const filtro = queryParams.get('productsorder');
 	console.log('filtro: ',filtro);
 
-	const [sortType, setSortType] = useState(filtro);
+	const [sortType, setSortType] = useState(filtro != null ? filtro: "mostRecent");
 	/*
 	const {
 		data: products,
@@ -287,7 +287,7 @@ const PageHotelList = () => {
           variant="body2"
 		  sx={sortType == "mostRecent" ? buttonTextStyleSelected : buttonTextStyleDeselected}
         >
-          Menor Precio
+			Most recent
         </Typography>
       </Button>
 
@@ -301,7 +301,7 @@ const PageHotelList = () => {
           variant="body2"
 		  sx={sortType == "lowToHigh" ? buttonTextStyleSelected : buttonTextStyleDeselected}
         >
-          Menor Precio
+			Lowest price
         </Typography>
       </Button>
 
@@ -315,7 +315,7 @@ const PageHotelList = () => {
           variant="body2"
 		  sx={sortType == "highToLow" ? buttonTextStyleSelected : buttonTextStyleDeselected}
         >
-          Mayor Precio
+			Highest price
         </Typography>
       </Button>
     </Box>
@@ -337,9 +337,9 @@ const PageHotelList = () => {
 
 			
 			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "0px", backgroundColor: "#f9f9f9" }}>{/* backgroundColor: "#f9f9f9"*/}
-				{products.map((hotel) => (
-					<Grid item key={hotel._id} xs={12} sm={6} md={4} lg={3}>
-					<Link to={`/product/${hotel._id}`} style={{ textDecoration: "none" }}>
+				{products.map((product) => (
+					<Grid item key={product._id} xs={12} sm={6} md={4} lg={3}>
+					<Link to={`/product/${product._id}`} style={{ textDecoration: "none" }}>
 						<Card sx={{
 							//maxWidth: 345, // Ancho máximo fijo para todas las tarjetas
 							backgroundColor: "#ffffff",//backgroundColor: "#ffffff",
@@ -357,14 +357,14 @@ const PageHotelList = () => {
 								<Link to="/" style={{ textDecoration: "none", color: "616161", position: "absolute", top: 10, right: 10 }}>
 									<img src="/buy-blue.svg" alt="" />
 								</Link>
-								<CardMedia sx={{ height: 200, backgroundSize: "auto" }} image={hotel.img.url} title={hotel.name} />
+								<CardMedia sx={{ height: 200, backgroundSize: "auto" }} image={product.img.url} title={product.name} />
 							</Box>
 							<CardContent>
-								<Typography gutterBottom variant="h5" component="div">
-									{hotel.name} {/*key {hotel._id}*/}
-								</Typography>
 								<Typography variant="body2" color="text.secondary">
-									{hotel.category}
+									{product.category}
+								</Typography>
+								<Typography gutterBottom variant="h5" component="div">
+									{product.name} {/*key {product._id}*/}
 								</Typography>
 							</CardContent>
 						</Box>
@@ -375,9 +375,9 @@ const PageHotelList = () => {
 			</Grid>
 			{/*
 			<Grid container spacing={2} textAlign="-webkit-center" sx={{ marginTop: "20px" }}>
-				{hotels.map((hotel) => (
-					<Grid item key={hotel.id} xs={12} sm={6} md={4} lg={3}>
-					<Link to={`/hotel/${hotel.id}`} style={{ textDecoration: "none" }}>
+				{hotels.map((product) => (
+					<Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+					<Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
 						<Card sx={{
 							maxWidth: 345, // Ancho máximo fijo para todas las tarjetas
 							backgroundColor: "#e8e8e8",
@@ -389,15 +389,15 @@ const PageHotelList = () => {
 							//flexDirection: "column",
 							}}>
 						<Box sx={{ height: 285, display: "flex", flexDirection: "column" }}>
-						<CardMedia sx={{ height: 140 }} image={hotel.image} title={hotel.name} />
+						<CardMedia sx={{ height: 140 }} image={product.image} title={product.name} />
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
-								{hotel.name}
+								{product.name}
 							</Typography>
 							<Typography variant="body2" color="text.secondary">
-								{hotel.description.length > 130
-								? `${hotel.description.slice(0, 130)}...`
-								: hotel.description}
+								{product.description.length > 130
+								? `${product.description.slice(0, 130)}...`
+								: product.description}
 							</Typography>
 						</CardContent>
 						</Box>

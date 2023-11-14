@@ -18,7 +18,7 @@ import getData from "../utils/getData";
 
 /*
 const fetchHotel = async (id) => {
-		console.log('obteniendo data del hotel ',id)
+		console.log('obteniendo data del product ',id)
 		const response = await fetch(`http://localhost:3001/hotels/${id}`);
 		if (!response.ok) {
 			throw new Error("Network response was not ok");
@@ -28,7 +28,7 @@ const fetchHotel = async (id) => {
 */
 
 	const fetchProduct = async (id) => {
-		console.log('Obteniendo datos del hotel', id);
+		console.log('Obteniendo datos del product', id);
 	  
 		// Llama a una función 'getData' que debe devolver la lista de productos
 		return getData().then((data) => {
@@ -72,7 +72,7 @@ const PageHotelDetails = () => {
 
 	console.log('HotelDetails');
 	
-	//const [match, params] = useRoute("/hotel/:id");
+	//const [match, params] = useRoute("/product/:id");
 	const { id } = useParams(); // Obtén el parámetro 'id' de la URL
 	console.log('id: ',id);
 	//params.id = 4;
@@ -94,9 +94,9 @@ const PageHotelDetails = () => {
 	}
 
 	if (error) {
-		//return <div>Error fetching Hotel! {error.message}</div>;
+		//return <div>Error fetching Product! {error.message}</div>;
 		return <Typography variant="body2" color="text.secondary">
-				Error fetching Hotel! {error.message}
+				Error fetching Product! {error.message}
 			</Typography>;
 	}
 	
@@ -143,15 +143,15 @@ const PageHotelDetails = () => {
 						<CardMedia
 							sx={{ height: "auto" }}
 							component="img"
-							image={hotel.image}
-							title={hotel.name}
+							image={product.image}
+							title={product.name}
 						/>
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
-								{hotel.name}
+								{product.name}
 							</Typography>
 							<Typography variant="body2" color="text.secondary" sx={{ maxWidth: "400px" }}>
-								{hotel.description}
+								{product.description}
 							</Typography>
 
 						</CardContent>
