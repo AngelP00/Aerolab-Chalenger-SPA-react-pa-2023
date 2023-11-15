@@ -118,10 +118,10 @@ const PageHotelDetails = () => {
 								{product.name}
 							</Typography>
 							<Typography variant="body2" color="text.secondary" sx={{ maxWidth: "400px" }}>
-								category: {product.category}
+								Category: {product.category}
 							</Typography>
 							<Typography variant="body2" color="text.secondary" sx={{ maxWidth: "400px" }}>
-								cost: ${product.cost} USD
+								Cost: ${product.cost} USD
 							</Typography>
 
 						</CardContent>
