@@ -99,6 +99,13 @@ const PageHotelDetails = () => {
 				Error fetching Product! {error.message}
 			</Typography>;
 	}
+
+	if (product == null) {
+		//return <div>Error fetching Product! {error.message}</div>;
+		return <Typography variant="body2" color="text.secondary">
+				Product not found
+			</Typography>;
+	}
 	
 	console.log('details');
 	return (
