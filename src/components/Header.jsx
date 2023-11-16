@@ -52,6 +52,7 @@ const Header = () => {
               borderRadius="100px"
               width="48px"
               height="48px"
+              justifyContent="center"
               sx={{
                 fontFamily: "SourceSansPro-Regular",
                 fontSize: "24px",
