@@ -22,7 +22,7 @@ const Header = () => {
               textAlign: "left",
               marginRight: "17px", // Espacio entre "John Kite" y el elemento Box
             }}>
-              John Kite
+              Angel Palacios
           </Link>
           <Box
             display="inline-flex"
