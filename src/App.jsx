@@ -11,6 +11,7 @@ import PageHotelList from "./pages/PageProductList";
 import PageHotelDetails from "./pages/PageProductDetails";
 import PageUser from "./pages/PageUser";
 import PageContact from "./pages/PageContact";
+import PageCart from "./pages/PageCart";
 
 import Header from "./components/Header";
 
@@ -52,7 +53,7 @@ function App() {
 						<Route path="/product/:id" element={<PageHotelDetails />} />
 						<Route path="/user" element={<PageUser />} />
 						<Route path="/contact" element={<PageContact />} />
-						
+						<Route path="/cart" element={<PageCart />} />
 					</Routes>
 				</QueryClientProvider>
 			</BrowserRouter>

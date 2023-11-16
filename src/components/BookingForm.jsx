@@ -5,16 +5,17 @@ import Button from "@mui/material/Button";
 import useStore from "../store";
 import { Typography } from "@mui/material";
 
-const BookingForm = ({ hotel }) => {
+const BookingForm = ({ product }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const addReservation = useStore((state) => state.addReservation);
+  const addProduct = useStore((state) => state.addProduct);
 
   const onSubmit = (data) => {
-    addReservation(hotel, data);
+    addProduct(product, data);
+	console.log("product buy: ",product);
     toast.success("Purchase successful!");
   };
 
