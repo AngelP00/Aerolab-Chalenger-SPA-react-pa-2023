@@ -97,7 +97,7 @@ const PageHotelDetails = () => {
 
 				<CardActions>
 				{/*<BookingFormAddProductToCart /> */}
-				<BookingFormAddProductToCart product={product} />;
+				<BookingFormAddProductToCart product={product} />
 				</CardActions>
 			</Card>
 		</div>
