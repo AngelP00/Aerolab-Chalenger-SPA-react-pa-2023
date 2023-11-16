@@ -5,36 +5,24 @@ import Button from "@mui/material/Button";
 import useStore from "../store";
 import { Typography } from "@mui/material";
 
-const BookingForm = ({ product }) => {
+const BookingFormCart = ({ productsInCart }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const addProduct = useStore((state) => state.addProduct);
+  //const addProduct = useStore((state) => state.addProduct);
+  const payShopingCart = useStore((state) => state.payShopingCart);
 
   const onSubmit = (data) => {
-    addProduct(product, data);
-	console.log("product buy: ",product);
-    toast.success("Purchase successful!");
+    //addProduct(productsInCart, data);
+    payShopingCart();
+	  console.log("productsInCart buy: ",productsInCart);
+    toast.success("Pay Shoping Cart successful!");
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>Quantity:</label>
-        {/* Quantity of the product to purchase */}
-        <Input
-          type="number"
-          {...register("quantity", { required: true, min: 1 })}
-          placeholder="Quantity"
-        />
-        {errors.quantity && (
-          <Typography style={{ color: "red" }}>Quantity is required (minimum 1)</Typography>
-        )}
-      </div>
-      <br />
-
       <div>
         <label>Address:</label>
         {/* Shipping address */}
@@ -105,10 +93,10 @@ const BookingForm = ({ product }) => {
 
       {/* Button to submit the order */}
       <Button variant="contained" type="submit">
-        Buy Product
+        Pay shoping cart
       </Button>
     </form>
   );
 };
 
-export default BookingForm;
+export default BookingFormCart;

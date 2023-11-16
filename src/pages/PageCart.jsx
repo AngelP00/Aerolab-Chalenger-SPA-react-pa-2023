@@ -33,7 +33,9 @@ import { Box } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
+import CardActions from "@mui/material/CardActions";
 import useStore from "../store";
+import BookingFormCart from "../components/BookingFormCart";
 
 const PageCart = () => {
   const productsInCart = useStore((state) => state.products);
@@ -100,25 +102,10 @@ const PageCart = () => {
 									{product.product.name} {/*key {product.product._id}*/}
 								</Typography>
                 <Typography gutterBottom variant="body2" component="div">
-                  Address: {product.dates.address} {/*key {product.product._id}*/}
-								</Typography>
-                <Typography gutterBottom variant="body2" component="div">
-                  Credit Card: {product.dates.creditCard} {/*key {product.product._id}*/}
-								</Typography>
-                <Typography gutterBottom variant="body2" component="div">
-                  Email: {product.dates.email} {/*key {product.product._id}*/}
-								</Typography>
-                <Typography gutterBottom variant="body2" component="div">
-                  Phone: {product.dates.phone} {/*key {product.product._id}*/}
-								</Typography>
-                <Typography gutterBottom variant="body2" component="div">
-                  Postal Code: {product.dates.postalCode} {/*key {product.product._id}*/}
+                  Added To Cart Date: {product.dates.addedToCartDate} {/*key {product.product._id}*/}
 								</Typography>
                 <Typography gutterBottom variant="body2" component="div">
 									Quantity: {product.dates.quantity} {/*key {product.product._id}*/}
-								</Typography>
-                <Typography gutterBottom variant="body2" component="div">
-                  Product Id: {product.product._id}
 								</Typography>
                 
 							</CardContent>
@@ -128,6 +115,18 @@ const PageCart = () => {
 					</Grid>
 				))}
 			</Grid>
+      
+      {productsInCart.length > 0 && (
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", height: "100vh", margin: "20px" }}>
+          <Card sx={{ backgroundColor: "#e8e8e8" }}>
+            <CardActions>
+              {/*<BookingFormAddProductToCart /> */}
+              <BookingFormCart productsInCart={productsInCart} />
+            </CardActions>
+          </Card>
+        </div>
+      )}
+
     </div>
   );
 };

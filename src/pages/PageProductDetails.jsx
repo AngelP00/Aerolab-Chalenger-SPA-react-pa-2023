@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 //import { useRoute,Link, useLocation } from "wouter";
 import { useParams,Link } from "react-router-dom";
-import BookingForm from "../components/BookingForm";
+import BookingFormAddProductToCart from "../components/BookingFormAddProductToCart";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -96,8 +96,8 @@ const PageHotelDetails = () => {
 				</Box>
 
 				<CardActions>
-				{/*<BookingForm /> */}
-				<BookingForm product={product} />;
+				{/*<BookingFormAddProductToCart /> */}
+				<BookingFormAddProductToCart product={product} />;
 				</CardActions>
 			</Card>
 		</div>

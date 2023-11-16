@@ -14,13 +14,22 @@ export default useStore;
 import { create } from "zustand";
 
 const useStore = create((set) => ({
-  products: [],
-  addProduct: (product, dates) =>
-    set((state) => {
-      const newProducts = [...state.products, {product,dates}];
-      console.log("New products:", newProducts);
-      return { products: newProducts };
-    }),
+	products: [],
+  	addProduct: (product, dates) =>
+		set((state) => {
+			const newProducts = [...state.products, {product,dates}];
+			console.log("New products:", newProducts);
+			return { products: newProducts };
+		}),
+	payShopingCart: () =>
+		set(() => ({
+			products: [],
+		})),
+	clearCart: () =>
+		set(() => ({
+			products: [],
+		})),
+
 }));
 
 export default useStore;
