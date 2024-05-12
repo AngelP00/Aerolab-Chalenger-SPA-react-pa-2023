@@ -3,7 +3,7 @@ const HEADERS = {
   "Content-Type": "application/json",
   Accept: "application/json",
   Authorization:
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzFjMzFjMDFmMWY0NTAwMjEwOTliNjAiLCJpYXQiOjE2NjI3OTIxMjl9.rNPq16e0LRduvU98shcQ8zKjKAqbOpAQKtH6oL_x10g",
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQwNDg1MWI2MzkwNTAwMjllZTA4NmYiLCJpYXQiOjE3MTU0ODg4NDl9.ChLReCs2SFcDLI7nLLkmInOjZDnw6ufoB1witX55LM8",
 };
 
 const getDataAnterior = () => {
